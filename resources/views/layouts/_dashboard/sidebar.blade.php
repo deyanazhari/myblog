@@ -1,7 +1,7 @@
 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
     <div class="sb-sidenav-menu">
        <div class="nav">
-          <a class="nav-link active" href="#">
+          <a class="nav-link {{set_active('dashboard.index')}}" href="{{route('dashboard.index')}}">
              <div class="sb-nav-link-icon">
                 <i class="fas fa-tachometer-alt"></i>
              </div>
@@ -15,7 +15,8 @@
              </div>
              Posts
           </a>
-          <a class="nav-link" href="#">
+
+          <a class="nav-link {{set_active(['categories.index','categories.create'])}}" href="{{route('categories.index')}}">
              <div class="sb-nav-link-icon">
                 <i class="fas fa-bookmark"></i>
              </div>
@@ -52,6 +53,7 @@
     <div class="sb-sidenav-footer">
        <div class="small">Logged in as:</div>
        <!-- show username -->
+      {{Auth::user()-> name}}
     </div>
  </nav>
  

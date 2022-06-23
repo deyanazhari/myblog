@@ -11,6 +11,9 @@
    <link rel="stylesheet" href="{{asset('vendor/my-dashboard/css/dashboard.css')}}">
    <script src="{{asset('vendor/fontawesome-free/js/all.min.js')}}"></script>
    <link rel="stylesheet" href="{{asset('vendor/flag-icon-css/css/flag-icon.min.css')}}">
+   {{--css external--}}
+
+   @stack('css-external')
 </head>
 
 <body>
@@ -47,6 +50,9 @@
   <script src="{{asset('vendor/jquery/jquery-3.6.0.min.js')}}"></script>
    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
    <script src="{{asset('vendor/my-dashboard/js/dashboard.js')}}"></script>
+
+   @stack('javascript-external')
+   @stack('javascript-internal')
 </body>
 
 </html>
