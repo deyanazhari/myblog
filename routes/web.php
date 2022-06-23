@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/localization/{language}',[\App\Http\Controllers\LocalizationController::class,'switch'])->name('localization.switch');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('');
+// });
+
+Route::get('/',[\App\Http\Controllers\BlogController::class,'home'])->name('blog.home');
 
 
 Auth::routes([
@@ -29,4 +31,7 @@ Route::group(['prefix' => 'dashboard','middleware' => ['web','auth']], function 
     //categories
     Route::get('/categories/select',[\App\http\Controllers\CategoryController::class,'select'])->name('categories.select');
     Route::resource('/categories',\App\http\Controllers\CategoryController::class);
+
+    //blog
+
 });
